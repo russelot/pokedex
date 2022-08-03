@@ -36,7 +36,6 @@ class PokemonDetails extends Component {
 
     render() {
         const { pokemonName, abilities, types, image, stats } = this.state;
-        console.log(image);
         return (
             <div className="p-5">
                 <div style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
@@ -59,9 +58,9 @@ class PokemonDetails extends Component {
                         style={{ width: "300px" }}
                     >
                         <tbody>
-                            {stats?.map(s => {
+                            {stats?.map((s, index) => {
                                 return (
-                                    <tr>
+                                    <tr key={index}>
                                         <td>{s.name}</td>
                                         <td>{s.base_stat}</td>
                                     </tr>

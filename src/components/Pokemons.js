@@ -20,12 +20,12 @@ class Pokemons extends Component {
     }
 
     componentDidMount() {
-        this.setState({ pokemons: DUMMY_POKEMONS });
-        // axios.get(`https://pokeapi.co/api/v2/pokemon`)
-        //     .then(res => {
-        //         const pokemons = res.data;
-        //         this.setState({ pokemons });
-        //     });
+        // this.setState({ pokemons: DUMMY_POKEMONS });
+        axios.get(`https://pokeapi.co/api/v2/pokemon`)
+            .then(res => {
+                const pokemons = res.data.results;
+                this.setState({ pokemons });
+            });
     }
 
     render() {
